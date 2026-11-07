@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collabora con Medic Service – medici specialisti a Oristano e Sassari</title>
+<meta name="description" content="Medic Service cerca medici specialisti per le sedi di Oristano e per la nuova sede di Sassari. Nessun costo fisso, pazienti, segreteria e burocrazia a cura del centro.">
+<link rel="icon" href="https://medicservice.eu/assets/monogram.svg">
+<meta property="og:title" content="Collabora con Medic Service">
+<meta property="og:description" content="Cerchiamo medici specialisti a Oristano e Sassari. Voi pensate ai pazienti, al resto pensiamo noi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blu:#2d99da;--blu-scuro:#1b6fa3;--ink:#1f2a30;--muted:#5d6b72;--bg:#f5f8fa;--card:#fff;--line:#dfe7ec;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Montserrat,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:16px}
+a{color:var(--blu-scuro)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+header img{height:30px}
+header a.tel{font-weight:600;text-decoration:none;color:var(--ink);font-size:15px}
+.hero{background:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-180px;top:-160px;width:520px;height:520px;border-radius:50%;background:var(--blu);opacity:.08}
+.kicker{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--blu);font-weight:600;margin:0 0 14px}
+h1{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:clamp(36px,6vw,58px);line-height:1.05;margin:0 0 18px;max-width:720px}
+h1 em{color:var(--blu);font-style:italic}
+.lead{font-size:19px;color:var(--muted);max-width:620px;margin:0 0 28px}
+.btn{display:inline-block;background:var(--blu);color:#fff;text-decoration:none;font-weight:600;padding:15px 28px;border-radius:999px;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.btn:hover{background:var(--blu-scuro)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);margin-left:8px}
+section{padding:56px 0}
+h2{font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:clamp(28px,4vw,38px);margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card b{display:block;font-size:17px;margin-bottom:6px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.num{display:flex;flex-wrap:wrap;gap:16px}
+.num div{flex:1 1 180px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.num strong{display:block;font-family:"DM Serif Display",Georgia,serif;font-weight:400;font-size:40px;color:var(--blu);line-height:1}
+.num span{color:var(--muted);font-size:14px}
+.faces{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.faces img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.sedi .card h3{margin:0 0 6px;font-size:18px}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--blu-scuro);background:#e5f2fb;border-radius:999px;padding:3px 10px;margin-bottom:10px}
+.who{background:#fff}
+.who p{font-size:18px;max-width:760px;margin:0;color:var(--muted)}
+form{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;max-width:640px}
+label{display:block;font-weight:600;font-size:14px;margin:16px 0 6px}
+input[type=text],input[type=tel],input[type=email],select{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+input:focus,select:focus{outline:none;border-color:var(--blu)}
+.days,.sede{display:flex;flex-wrap:wrap;gap:8px}
+.days label,.sede label{display:flex;align-items:center;gap:6px;margin:0;font-weight:500;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer}
+.privacy{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:18px;line-height:1.5}
+.privacy input{margin:0 8px 0 0;vertical-align:-2px}
+form .btn{margin-top:22px;width:100%}
+.note{font-size:13px;color:var(--muted);margin-top:10px}
+footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:#fff}
+@media (max-width:560px){.btn.ghost{margin:10px 0 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a href="https://www.medicservice.it/"><img src="https://medicservice.eu/assets/logo-horizontal.svg" alt="Medic Service"></a>
+  <a class="tel" href="tel:0783211136">0783 211136</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <p class="kicker">Collabora con Medic Service</p>
+  <h1>Voi pensate ai pazienti,<br><em>al resto pensiamo noi.</em></h1>
+  <p class="lead">Cerchiamo medici specialisti di varie branche per le nostre sedi di Oristano e per la nuova sede di Sassari.</p>
+  <a class="btn" href="#candidati">Candidati in un minuto</a>
+  <a class="btn ghost" href="tel:0783211136">Chiamaci</a>
+</div></div>
+
+<section><div class="wrap">
+  <h2>Perché collaborare con noi</h2>
+  <div class="grid">
+    <div class="card"><b>I pazienti ve li portiamo noi</b><p>Campagne di visibilità, agende e prenotazioni online, e la fiducia di oltre 2.000 recensioni su MioDottore e 4,7 su Google.</p></div>
+    <div class="card"><b>Nessun costo fisso</b><p>Nessun investimento iniziale: si lavora a percentuale sulle prestazioni, in strutture sanitarie già autorizzate.</p></div>
+    <div class="card"><b>Scegliete voi quando</b><p>Giorni e orari li decidete voi, anche solo mezza giornata a settimana.</p></div>
+    <div class="card"><b>Zero burocrazia</b><p>Segreteria, accettazione, fatturazione, privacy e invio al Sistema TS sono a cura del centro.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Medic Service in numeri</h2>
+  <div class="num">
+    <div><strong>50</strong><span>specialisti</span></div>
+    <div><strong>20.000</strong><span>visite all'anno</span></div>
+    <div><strong>3</strong><span>sedi: due a Oristano, una in apertura a Sassari</span></div>
+  </div>
+  <div class="faces" aria-label="Alcuni dei nostri specialisti">
+    <img src="https://medicservice.eu/assets/photos/usai.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/Canu.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/diana.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/Cabras.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/mirai.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/picciau.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/paderi.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/Trincas.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/fornero.webp" alt="">
+    <img src="https://medicservice.eu/assets/photos/pibi.webp" alt="">
+  </div>
+</div></section>
+
+<section class="sedi" style="padding-top:0"><div class="wrap">
+  <h2>Le sedi</h2>
+  <div class="grid">
+    <div class="card"><span class="tag">Oristano</span><h3>Via Tharros 57</h3><p>Struttura nuova con ambulatori attrezzati, ecografi, laser e ambulatorio chirurgico. Spogliatoi e area relax riservati ai medici.</p></div>
+    <div class="card"><span class="tag">Oristano</span><h3>Via Canalis 9</h3><p>La sede dell'oculistica.</p></div>
+    <div class="card"><span class="tag">Sassari · in apertura</span><h3>Nuova sede</h3><p>Ambulatori per visite specialistiche e sala per piccola chirurgia e interventi ambulatoriali.</p></div>
+  </div>
+</div></section>
+
+<section class="who"><div class="wrap">
+  <h2>A chi ci rivolgiamo</h2>
+  <p>A chi lavora già a Oristano o a Sassari e vuole uno spazio in più, a chi sta avviando l'attività privata e ai chirurghi che cercano una sala per interventi ambulatoriali.</p>
+</div></section>
+
+<section id="candidati"><div class="wrap">
+  <h2>Candidati in un minuto</h2>
+  <form action="https://formsubmit.co/info@medicservice.it" method="POST">
+    <input type="hidden" name="_subject" value="Nuova candidatura medico – Collabora con noi">
+    <input type="hidden" name="_next" value="https://medicservice.eu/collabora-con-noi/grazie.html">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+    <label for="nome">Nome e cognome</label>
+    <input type="text" id="nome" name="Nome e cognome" required autocomplete="name">
+
+    <label for="spec">Specialità</label>
+    <select id="spec" name="Specialità" required>
+      <option value="">Scegli…</option>
+      <option>Allergologia</option><option>Angiologia / Chirurgia vascolare</option><option>Cardiologia</option><option>Chirurgia generale</option><option>Chirurgia plastica</option><option>Dermatologia</option><option>Endocrinologia</option><option>Fisiatria</option><option>Gastroenterologia</option><option>Geriatria</option><option>Ginecologia</option><option>Medicina estetica</option><option>Neurologia</option><option>Nutrizione</option><option>Oculistica</option><option>Oncologia</option><option>Ortopedia</option><option>Otorinolaringoiatria</option><option>Pneumologia</option><option>Psichiatria / Psicologia</option><option>Radiologia</option><option>Reumatologia</option><option>Urologia</option><option>Altro</option>
+    </select>
+
+    <label>Sede che ti interessa</label>
+    <div class="sede">
+      <label><input type="radio" name="Sede" value="Oristano" required> Oristano</label>
+      <label><input type="radio" name="Sede" value="Sassari"> Sassari</label>
+      <label><input type="radio" name="Sede" value="Entrambe"> Entrambe</label>
+    </div>
+
+    <label for="tel">Telefono</label>
+    <input type="tel" id="tel" name="Telefono" required autocomplete="tel">
+
+    <label for="email">Email <span style="font-weight:400;color:var(--muted)">(facoltativa)</span></label>
+    <input type="email" id="email" name="email" autocomplete="email">
+
+    <label>Giorni in cui saresti disponibile <span style="font-weight:400;color:var(--muted)">(facoltativo)</span></label>
+    <div class="days">
+      <label><input type="checkbox" name="Giorni[]" value="Lun"> Lun</label>
+      <label><input type="checkbox" name="Giorni[]" value="Mar"> Mar</label>
+      <label><input type="checkbox" name="Giorni[]" value="Mer"> Mer</label>
+      <label><input type="checkbox" name="Giorni[]" value="Gio"> Gio</label>
+      <label><input type="checkbox" name="Giorni[]" value="Ven"> Ven</label>
+      <label><input type="checkbox" name="Giorni[]" value="Sab"> Sab</label>
+    </div>
+
+    <label class="privacy"><input type="checkbox" name="Consenso privacy" value="Sì" required> Acconsento al trattamento dei miei dati per essere ricontattato, secondo l'<a href="https://www.iubenda.com/privacy-policy/865793" target="_blank" rel="noopener">informativa privacy</a> di Medic Service.</label>
+
+    <button class="btn" type="submit">Invia la candidatura</button>
+    <p class="note">Risposta immediata e incontro conoscitivo, senza impegno. Preferisci parlarne a voce? Chiama lo <a href="tel:0783211136">0783 211136</a>.</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  Medic Service – Centro Polispecialistico · Via Tharros 57, Oristano · P.IVA 01019170958 · <a href="https://www.medicservice.it/">medicservice.it</a>
+</div></footer>
+</body>
+</html>
