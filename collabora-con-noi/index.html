@@ -55,6 +55,8 @@ input:focus,select:focus{outline:none;border-color:var(--blu)}
 .privacy input{margin:0 8px 0 0;vertical-align:-2px}
 form .btn{margin-top:22px;width:100%}
 .note{font-size:13px;color:var(--muted);margin-top:10px}
+.errore{color:#b42318;font-size:14px;font-weight:600;margin-top:12px}
+.btn[disabled]{opacity:.6;cursor:wait}
 footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:#fff}
 @media (max-width:560px){.btn.ghost{margin:10px 0 0}}
 </style>
@@ -120,12 +122,8 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var
 
 <section id="candidati"><div class="wrap">
   <h2>Candidati in un minuto</h2>
-  <form action="https://formsubmit.co/info@medicservice.it" method="POST">
-    <input type="hidden" name="_subject" value="Nuova candidatura medico – Collabora con noi">
-    <input type="hidden" name="_next" value="https://medicservice.eu/collabora-con-noi/grazie.html">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  <form id="candidatura" method="post">
+    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
 
     <label for="nome">Nome e cognome</label>
     <input type="text" id="nome" name="Nome e cognome" required autocomplete="name">
@@ -161,7 +159,8 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var
 
     <label class="privacy"><input type="checkbox" name="Informativa privacy" value="Letta" required> Ho letto l'<a href="privacy.html" target="_blank">informativa sul trattamento dei dati</a> delle candidature.</label>
 
-    <button class="btn" type="submit">Invia la candidatura</button>
+    <button class="btn" type="submit" id="invia">Invia la candidatura</button>
+    <p class="errore" id="errore" role="alert" hidden></p>
     <p class="note">Risposta immediata e incontro conoscitivo, senza impegno. Preferisci parlarne a voce? Chiama lo <a href="tel:0783211136">0783 211136</a>.</p>
   </form>
 </div></section>
@@ -169,5 +168,58 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;border-top:1px solid var
 <footer><div class="wrap">
   Medic Service – Centro Polispecialistico · Via Tharros 57, Oristano · P.IVA 01019170958 · <a href="privacy.html">Privacy candidature</a> · <a href="https://www.medicservice.it/">medicservice.it</a>
 </div></footer>
+<script>
+(function () {
+  // Web app Google Apps Script (finisce con /exec): riceve la candidatura e la scrive nel foglio.
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxVmiboRNqT8ThuOr4NM21TJYDP3NpYNc_dPZeqHZNq5a8yp3gwwCb0D0YqJAk0Gxnm/exec';
+  var form = document.getElementById('candidatura');
+  var btn = document.getElementById('invia');
+  var err = document.getElementById('errore');
+  var label = btn.innerHTML;
+  var aperta = Date.now();
+
+  function errore(msg) {
+    err.textContent = msg || 'Invio non riuscito. Riprova o chiama lo 0783 211136.';
+    err.hidden = false;
+    btn.disabled = false;
+    btn.innerHTML = label;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    err.hidden = true;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    var sede = form.querySelector('input[name="Sede"]:checked');
+    var giorni = Array.prototype.map.call(form.querySelectorAll('input[name="Giorni[]"]:checked'), function (c) { return c.value; });
+    var dati = {
+      nome: form.nome.value.trim(),
+      specialita: form.spec.value,
+      sede: sede ? sede.value : '',
+      telefono: form.tel.value.trim(),
+      email: form.email.value.trim(),
+      giorni: giorni.join(', '),
+      privacy: form.querySelector('input[name="Informativa privacy"]').checked,
+      website: form.website.value,
+      pagina: location.href,
+      t: Date.now() - aperta
+    };
+    btn.disabled = true;
+    btn.innerHTML = 'Invio in corso…';
+    try {
+      var res = await fetch(ENDPOINT, {
+        method: 'POST',
+        // text/plain evita la richiesta preliminare CORS, che Apps Script non gestisce
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(dati)
+      });
+      var out = await res.json();
+      if (out && out.ok) { location.href = 'grazie.html'; }
+      else { errore(out && out.error); }
+    } catch (x) {
+      errore();
+    }
+  });
+})();
+</script>
 </body>
 </html>
